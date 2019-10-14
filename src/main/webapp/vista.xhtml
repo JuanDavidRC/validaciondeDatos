@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div style="padding:16px;border:#D0D0D0 1px solid;text-align:center">
+           <h:form>
+            <h1>Controlador</h1>
+        <br></br> <br></br>
+         <h:outputText value="Nombre "/>
+            
+         <h:inputText   id="nombre" required="true"  label="Ingrese su nombre "  value="#{vista.nombreV}">
+                
+            </h:inputText>             
+            <br></br> <br></br>
+             <h:message for="nombre" style = "color:black"></h:message>
+              <br></br> <br></br>
+            <h:outputText value="Edad: "/>
+            <h:inputText id="longitud" required="true"  label="Longitud " value="#{vista.edadV}">             
+            </h:inputText> 
+            <br></br> <br></br>
+            <h:message for="longitud" style = "color:black"></h:message>
+            <br></br> <br></br>
+            <h:outputText value="Email: "/>
+            <h:inputText id="email" required="true" label="Email "  value="#{vista.emailV}">
+            </h:inputText>   
+            <br></br> <br></br>
+            <h:message for="email" style = "color:black"></h:message>
+            <br></br> <br></br>
+            <h:outputText value="Telefono "/>
+            <h:inputText id="telefono" required="true" label="Telefono "  value="#{vista.telefonoV}">       
+            </h:inputText> 
+            <br></br> <br></br>
+            <h:message for="telefono" style = "color:black"></h:message>
+            <br></br> <br></br>
+             <h:outputText value="Fecha (dd/mm/yyyy): "/>
+             <h:inputText  id="fecha" required="true" label="Fecha " value="#{vista.fechaV}">              
+            </h:inputText>
+            <br></br> <br></br>
+            <h:message for="fecha" style = "color:black"></h:message>
+             <br></br> <br></br>
+           <h:outputText  value="Moneda : "/>
+           <h:inputText  id="moneda"  required="true" label="Moneda " value="#{vista.monedaV}" >               
+            </h:inputText>
+            <br></br> <br></br>
+            <h:message for="moneda" style = "color:black"></h:message>
+            
+            
+            <br></br> <br></br>
+             <h:commandButton value ="Guardar2" action="Correcto">
+            </h:commandButton>
+            
+
+        </h:form>
+         </div>   
+    </h:body>
+</html>
+

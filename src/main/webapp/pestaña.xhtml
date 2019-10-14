@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <div style="padding:16px;border:#D0D0D0 1px solid;text-align:center">
+        <h:form>
+            <br></br>
+            <h:outputText value="Nombre "/>
+            
+            <h:inputText   id="nombre" required="true"  label="Ingrese su nombre ">
+                <f:validateRegex pattern="[A-Za-z]{2,}"  />
+            </h:inputText>      
+             <br></br>
+            <h:message for="nombre" style = "color:red" ></h:message>
+            <br></br>
+            <h:outputText value="Edad "/>
+            <h:inputText id="longitud" required="true"  label="Longitud ">
+               <f:validateLongRange minimum="18" maximum="72"></f:validateLongRange>
+            </h:inputText> 
+            <br></br>
+            <h:message for="longitud" style = "color:red"></h:message>
+            <br></br>
+            <h:outputText value="E-mail: "/>
+            <h:inputText id="email" required="true" label="Email " >
+                <f:validateRegex pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" />
+            </h:inputText>   
+            <br></br>
+            <h:message for="email" style = "color:red"></h:message>
+            <br></br>
+            <h:outputText value="Telefono "/>
+            <h:inputText id="telefono" required="true" label="Telefono " >
+                <f:validateRegex pattern="[0-90-9]{10}" />
+               
+            </h:inputText> 
+            <br></br>
+            <h:message for="telefono" style = "color:red"></h:message>
+            <br></br>
+            <h:outputText value="Fecha (dd/mm/yyyy): "/>
+            <h:inputText  id="fecha" required="true" label="Fecha ">
+                <f:convertDateTime pattern="dd/MM/yyyy" />
+            </h:inputText>
+            <br></br>
+            <h:message for="fecha" style = "color:red"></h:message>
+            <br></br>
+            <h:outputText  value="Moneda : "/>
+            <h:inputText  id="moneda"  required="true" label="Moneda ">
+                <f:convertNumber currencySymbol="$"
+                                 groupingUsed="true"
+                                 maxFractionDigits="3"
+                                 type="currency" 
+                                 locale="es_CO" />
+            </h:inputText>
+            <br></br>
+            <h:message for="moneda" style = "color:red"></h:message>
+            <br></br>
+            <h:commandButton value ="Guardar" action="vista">
+            </h:commandButton>
+            
+        </h:form>
+        </div> 
+    </h:body>
+</html>
+
