@@ -44,13 +44,9 @@ public class Vista implements Serializable {
     /**
      * atributo  boton de revision de los datos
      */
-    private String guardar;
-    /**
-     * llamado de la clase logica para utilizar los metodos 
-     */
+    
     Logica logica = new Logica();
     
-    private String campoVacio;
     /**
      * constructor vacio de la clase
      */
@@ -188,32 +184,7 @@ public class Vista implements Serializable {
      * metodo get que 
      * @return 
      */
-    public String getCampoVacio() {
-        return campoVacio;
-    }
-
-    public void setCampoVacio(String campoVacio) {
-        this.campoVacio = campoVacio;
-    }
-    /**}
-     * mtodo de get con el llamado de las funciones
-     * @return 
-     */
-    public String getGuardar() {
-        vNombre();
-        vEdad();
-        vEmail();
-        vTelefono();
-        vFecha();
-        vMoneda();
-        return "";
-    }
-    /**
-     * metodo set con el parametro guardar
-     * @param guardar 
-     */
-    public void setGuardar(String guardar) {
-        this.guardar = guardar;
-    }
+   
+    
     
 }
