@@ -5,186 +5,194 @@
  */
 package com.udec.camposValidados.controlador;
 
-import com.udec.camposValidados.modelo.Logica;
+
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
+import javax.faces.view.ViewScoped;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  * @author JUAN DAVID REYES
  * @author ALEJNDRO TORRES
  */
 @Named(value = "vista")
-@SessionScoped
-public class Vista implements Serializable {
+@ViewScoped
+public class Vista implements Serializable{
     /**
-     * atributo nombre de la persona a validar
+     * anotacion para validar campos vacios
      */
-    private String nombreV;
+    @NotNull(message = "Campo Obligatorio")
+   /**
+    * anotacion para validar nombre y letras
+    */
+    @Size(min = 3, max = 15)
     /**
-     * atrubuto edad de la paersona a validar
+     * anotacion para que los valores de el nombreno se exedan
      */
-    private String edadV;
+    @Pattern(regexp="[A-Za-z]{2,}",message = "Ingrese nombre valido")
     /**
-     * atributo de el correo de la persona a validar
+     * atributo nombre a validar
      */
-    private String emailV;
+    private String nombre;
     /**
-     * atributo de telefono de la persona a validar
+     * anotacion para validar el correo y sus caracteres
      */
-    private String telefonoV;
+    @Pattern(regexp ="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" , message = "Ingrese un correo correcto")
+   /**
+    * atributo correo  a validar
+    */
+    private String correo;
     /**
-     * atributo fecha de la persona a validar
+     * anotacion para validar fecha
+     * 
      */
-    private String fechaV;
+     @NotNull(message = "Campo Obligatorio")
+     /**
+      * anotacion para validar compo vacio
+      */
+    @Past(message = "Ingrese una fecha pasada valida")
     /**
-     * atriburo moda de el sueldo a validar
+     * atributo fecha a validar
      */
-    private String monedaV;
+    private Date fecha;
     /**
-     * atributo  boton de revision de los datos
+     * anotacion para validar los limetes de edad
      */
+    @NotNull @Min(18) @Max(72) 
+    /**
+     * atributo edad a validar
+     */
+    private String edad;
+    /**
+     * anotacion para la validacion de el telefono y diez digitos
+     */
+    @Pattern(regexp ="[0-90-9]{10}" , message = "Ingrese un telefono valido")
+    /**
+     * atributo telefono a validar
+     */
+    private String telefono;
+    /**
+     * anotacion para validar el tipo de moneda
+     */
+    @DecimalMin(value = "10.00", message = "Escriba la cantidad correcta")
+    /**
+     * anotacion para validar la moneda
+     */
+    @DecimalMax(value = "100000.00", message = "Escriba la cantidad correcta")
+    /**
+     * atributo moneda a validar
+     */
+    private double moneda;
     
-    Logica logica = new Logica();
-    
+   
     /**
-     * constructor vacio de la clase
+     * Construcutor vacio de la clase
      */
     public Vista() {
     }
     /**
-     * metodo de la validacion nombre que se envia a la vista
-     */
-    public void vNombre(){
-        logica.nombre(nombreV);
-        setNombreV(logica.getMostrar());
-    }
-    /**
-     * metodo de la validacion edad que se envia a la vista
-     */
-    public void vEdad(){
-        logica.nombre(edadV);
-        setEdadV(logica.getMostrar());
-    }
-    /**
-     * metodo de la validacion corro que se envia a la vista
-     */
-    public void vEmail(){
-        
-        logica.email(emailV);
-        setEmailV(logica.getMostrar());
-    }
-    /**
-     * metodo de la validacion telefono que se envia ala vista 
-     */
-    public void vTelefono(){
-        logica.telefono(telefonoV);
-        setTelefonoV(logica.getMostrar());
-    }
-    /**
-     * metodo de la validacion fecha que se envia ala vista
-     */
-    public void vFecha(){
-        logica.fecha(fechaV);
-        setFechaV(logica.getMostrar());
-    }
-    /**
-     * metodo validacion moneda que se envia a la vista
-     */
-    public void vMoneda(){
-        logica.setMostrar(monedaV);
-        logica.moneda(monedaV);
-        setMonedaV(logica.getMostrar());
-    }
-    /**
-     * metodo get retorna el nombre
+     * metodo get que retorna el nombre
      * @return 
      */
-    public String getNombreV() {
-        return nombreV;
-    }
-    /**
-     * metodo set con el parametro nombre
-     * @param nombreV 
-     */
-    public void setNombreV(String nombreV) {
-        this.nombreV = nombreV;
-    }
-    /**
-     * metodo get que retorna la edad
-     * @return 
-     */
-    public String getEdadV() {
-        return edadV;
+    public String getNombre() {
+        return nombre;
     }
     /**
      * metodo set con el parametro edad
-     * @param edadV 
+     * @param nombre 
      */
-    public void setEdadV(String edadV) {
-        this.edadV = edadV;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     /**
-     * metodo get que retorna e email de la persona
+     * metodo get que retorna el correo
      * @return 
      */
-    public String getEmailV() {
-        return emailV;
+    public String getCorreo() {
+        return correo;
     }
     /**
-     * metodo set con el prametro email
-     * @param emailV 
+     * metodo con el parametro correo
+     * @param correo 
      */
-    public void setEmailV(String emailV) {
-        this.emailV = emailV;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
     /**
-     * metodo set que retorna el correo
+     * metodo que retorna la fecha a validar
      * @return 
      */
-    public String getTelefonoV() {
-        return telefonoV;
+    public Date getFecha() {
+        return fecha;
     }
     /**
-     * metodo get con el parametro de telefono de la persona
-     * @param telefonoV 
+     * metodo con el parametro fecha
+     * @param fecha 
      */
-    public void setTelefonoV(String telefonoV) {
-        this.telefonoV = telefonoV;
+    public void setFecha(Date fecha) {
+        
+        this.fecha = fecha;
     }
     /**
-     * metodo get que retona la fecha de la persona
+     * metodo que retorna la fecha a validar
      * @return 
      */
-    public String getFechaV() {
-        return fechaV;
+    public String getEdad() {
+        return edad;
     }
     /**
-     * metodo set con el paramero fecha
-     * @param fechaV 
+     * metodo con el paraemtro edad 
+     * @param edad 
      */
-    public void setFechaV(String fechaV) {
-        this.fechaV = fechaV;
+    public void setEdad(String edad) {
+        this.edad = edad;
     }
     /**
-     * metodo get que retorna la moneda ingresada
+     * metodo con el escuchador enviar
      * @return 
      */
-    public String getMonedaV() {
-        return monedaV;
+    public String enviar(){
+         return "Correcto";
     }
     /**
-     * metodo set con e parametro moneda
-     * @param monedaV 
-     */
-    public void setMonedaV(String monedaV) {
-        this.monedaV = monedaV;
-    }
-    /**
-     * metodo get que 
+     * metodo que retorna la edad a validar
      * @return 
      */
-   
+    public String getTelefono() {
+        return telefono;
+    }
+    /**
+     * metodo con el parametro telefo 
+     * @param telefono 
+     */
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    /**
+     * metodo que retorna la moneda a validar
+     * @return 
+     */
+    public double getMoneda() {
+        return moneda;
+    }
+    /**
+     * metodo con el parametro moneda 
+     * @param moneda 
+     */
+    public void setMoneda(double moneda) {
+        this.moneda = moneda;
+    }
+    
     
     
 }
