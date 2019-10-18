@@ -31,7 +31,7 @@ public class Vista implements Serializable{
     /**
      * anotacion para validar campos vacios
      */
-    @NotNull(message = "Campo Obligatorio")
+    @NotNull(message = "Diligencie el campo")
    /**
     * anotacion para validar nombre y letras
     */
@@ -56,7 +56,7 @@ public class Vista implements Serializable{
      * anotacion para validar fecha
      * 
      */
-     @NotNull(message = "Campo Obligatorio")
+     @NotNull(message = "Diligencie el campo")
      /**
       * anotacion para validar compo vacio
       */

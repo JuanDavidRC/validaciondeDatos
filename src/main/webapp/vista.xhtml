@@ -9,44 +9,44 @@
      <h:body>
          <div style="padding:16px;border:#D0D0D0 1px solid;text-align:center">
         <h:form>
-                    <h:outputText value="Nombre: " />
-                    <h:inputText value="#{vista.nombre}" id="nombre" converterMessage="Ingrese letras">
+                    <h:outputText value="Nombre :" />
+                    <h:inputText value="#{vista.nombre}" id="nombre" converterMessage="Ingrese nombre">
                     </h:inputText>
                     <h:message for="nombre" style="color:red;"/>
                     <br></br><br></br>
                     
-                    <h:outputText value="E-mail " />
+                    <h:outputText value="E-mail :" />
                     <h:inputText value="#{vista.correo}" id="email" maxlength="33">
                     </h:inputText>
                     <h:message for="email" style="color:red;"/>
                     <br></br><br></br>
                    
-                    <h:outputText value="Fecha Nacimiento "  />
-                    <h:inputText value="#{vista.fecha}" id="Tb_fecha" maxlength="10" requiredMessage="Ingrese dd/mm/yyyy"  converterMessage="Ingrese fecha asi: dd/mm/yyyy" label="Ingrese fecha asi dd/mm/yyyy">                     
+                    <h:outputText value="Fecha Nacimiento :"  />
+                    <h:inputText value="#{vista.fecha}" id="Tb_fecha" maxlength="10" requiredMessage="Ingrese dd/mm/yyyy"  converterMessage="Ingrese fecha: dd/mm/yyyy" label="Ingrese fecha dd/mm/yyyy">                     
                     <f:convertDateTime pattern="dd/MM/yyyy"/>
                     </h:inputText>
                     <h:message for="Tb_fecha" style="color:red;" />
                     <br></br><br></br>
                                                 
-                    <h:outputText value="Edad "  />
+                    <h:outputText value="Edad :"  />
                     
                     <h:inputText value="#{vista.edad}" id="edad" >
                     </h:inputText>
                     <h:message for="edad" style="color:red;"/>
                     <br></br><br></br>
                    
-                    <h:outputText value="Telefono " />
-                    <h:inputText maxlength="16" value="#{vista.telefono}" id="Tb_telefono"  requiredMessage="Ingrese numeros" converterMessage="Ingrese numeros" >
+                    <h:outputText value="Telefono :" />
+                    <h:inputText maxlength="16" value="#{vista.telefono}" id="telefono"  requiredMessage="Ingrese numeros" converterMessage="Ingrese numeros" >
                     </h:inputText>
-                    <h:message for="Tb_telefono" style="color:red;"/>
+                    <h:message for="telefono" style="color:red;"/>
                     <br></br>
                                    
                     <br></br><br></br>
                                      
-                    <h:outputText value="Precio "/>                   
-                    <h:inputText maxlength="6" value="#{vista.moneda}" id="Tb_precio" requiredMessage="Ingrese numeros" converterMessage="Ingrese numeros">
+                    <h:outputText value="Moneda :"/>                   
+                    <h:inputText maxlength="6" value="#{vista.moneda}" id="moneda" requiredMessage="Ingrese numeros" converterMessage="Ingrese numeros">
                     </h:inputText>
-                    <h:message for="Tb_precio" style="color:red;"/>  
+                    <h:message for="moneda" style="color:red;"/>  
                     
                     <br></br><br></br>
                   
